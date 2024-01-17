@@ -2,3 +2,5 @@
 
 - connection: local
   hosts: localhost
+  vars_files:
+    - vars.yml
