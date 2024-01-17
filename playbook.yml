@@ -1,0 +1,4 @@
+---
+
+- connection: local
+  hosts: localhost
