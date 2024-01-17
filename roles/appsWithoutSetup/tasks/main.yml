@@ -1,0 +1,13 @@
+---
+- name: Install packages
+  package:
+    name:
+      - libreoffice
+      - pdfarranger
+
+- name: Install snap packages
+  snap:
+    name:
+      - keepassxc
+      - signal-desktop
+      - spotify

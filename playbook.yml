@@ -4,6 +4,7 @@
   connection: local
   hosts: localhost
   roles:
+    - appsWithoutSetup
     - git
   vars_files:
     - vars.yml
