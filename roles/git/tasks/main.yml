@@ -1,0 +1,26 @@
+---
+
+- name: Install 'git'
+  package:
+    name: git
+
+- name: set init.defaultbranch
+  become_user: "{{ remoteUserName }}"
+  git_config:
+    name: init.defaultbranch
+    scope: global
+    value: main
+
+- name: set user.email
+  become_user: "{{ remoteUserName }}"
+  git_config:
+    name: user.email
+    scope: global
+    value: 156898711+like-a-glitch@users.noreply.github.com
+
+- name: set user.name
+  become_user: "{{ remoteUserName }}"
+  git_config:
+    name: user.name
+    scope: global
+    value: like-a-glitch

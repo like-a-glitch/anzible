@@ -1,6 +1,9 @@
 ---
 
-- connection: local
+- become: true
+  connection: local
   hosts: localhost
+  roles:
+    - git
   vars_files:
     - vars.yml
