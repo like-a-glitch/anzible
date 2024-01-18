@@ -1,0 +1,6 @@
+[
+    {
+        "command": "editor.action.sortLinesAscending",
+        "key": "ctrl+m ctrl+f9"
+    }
+]

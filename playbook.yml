@@ -9,5 +9,6 @@
   # random
     - appsWithoutSetup
     - git
+    - vscodium
   vars_files:
     - vars.yml

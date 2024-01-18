@@ -1,0 +1,11 @@
+{
+    "editor.cursorBlinking": "phase",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "git.autofetch": "all",
+    "git.suggestSmartCommit": false,
+    "security.workspace.trust.enabled": false,
+    "window.menuBarVisibility": "compact",
+    "window.titleBarStyle": "custom",
+    "workbench.editor.empty.hint": "hidden",
+    "workbench.startupEditor": "newUntitledFile"
+}
