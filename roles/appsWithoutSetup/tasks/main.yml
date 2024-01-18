@@ -5,6 +5,10 @@
       - libreoffice
       - pdfarranger
 
+- name: Install flatpack packages
+  flatpak:
+    name: org.mozilla.Thunderbird
+
 - name: Install snap packages
   snap:
     name:
