@@ -4,6 +4,9 @@
   connection: local
   hosts: localhost
   roles:
+  # ordered
+    - init
+  # random
     - appsWithoutSetup
     - git
   vars_files:
