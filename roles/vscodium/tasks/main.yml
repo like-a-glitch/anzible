@@ -40,6 +40,7 @@
   changed_when: false
   command: "codium --install-extension {{ item }}"
   loop:
+    - eamodio.gitlens
     - ms-toolsai.jupyter
     - redhat.ansible
 

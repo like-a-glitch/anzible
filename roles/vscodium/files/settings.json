@@ -2,6 +2,7 @@
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "on",
     "git.autofetch": "all",
+    "git.defaultCloneDirectory": "~/code",
     "git.suggestSmartCommit": false,
     "redhat.telemetry.enabled": false,
     "security.workspace.trust.enabled": false,
