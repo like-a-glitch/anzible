@@ -4,11 +4,13 @@
   connection: local
   hosts: localhost
   roles:
-  # ordered
+  # start
     - init
   # random
     - appsWithoutSetup
     - git
     - vscodium
+  # end
+    - autostart
   vars_files:
     - vars.yml

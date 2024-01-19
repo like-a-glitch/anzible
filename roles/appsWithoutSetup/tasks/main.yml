@@ -15,3 +15,10 @@
       - keepassxc
       - signal-desktop
       - spotify
+
+- name: Add to autostartDict
+  set_fact:
+    autostartDict: "{{ autostartDict | combine({ item.key : item.value }) }}"
+  with_items:
+    - { key: "signal-desktop", value: "signal-desktop --start-in-tray" }
+    - { key: "thunderbird", value: "flatpak run org.mozilla.Thunderbird" }
