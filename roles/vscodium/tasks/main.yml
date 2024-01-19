@@ -1,6 +1,3 @@
-- set_fact:
-    configPath: "/home/{{ remoteUserName }}/.config/VSCodium"
-
 - name: Install 'codium'
   snap:
     classic: true
