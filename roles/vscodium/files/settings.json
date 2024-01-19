@@ -3,6 +3,7 @@
     "editor.cursorSmoothCaretAnimation": "on",
     "git.autofetch": "all",
     "git.suggestSmartCommit": false,
+    "redhat.telemetry.enabled": false,
     "security.workspace.trust.enabled": false,
     "window.menuBarVisibility": "compact",
     "window.titleBarStyle": "custom",
