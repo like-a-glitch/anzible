@@ -1,5 +1,14 @@
 [
     {
+        "command": "editor.action.deleteLines",
+        "key": "shift+delete",
+        "when": "textInputFocus && !editorReadonly"
+    },
+    {
+        "command": "editor.action.duplicateSelection",
+        "key": "ctrl+d"
+    },
+    {
         "command": "editor.action.sortLinesAscending",
         "key": "ctrl+m ctrl+f9"
     }
