@@ -56,3 +56,4 @@
     - text/csv
     - text/markdown
     - text/plain
+    - text/x-python
