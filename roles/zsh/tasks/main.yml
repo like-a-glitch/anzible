@@ -1,0 +1,11 @@
+- name: Install 'zsh'
+  package:
+    name: zsh
+
+- name: Copy settings file
+  copy:
+    dest: "/home/{{ remoteUserName }}/.zshrc"
+    group: "{{ remoteUserName }}"
+    mode: "664"
+    owner: "{{ remoteUserName }}"
+    src: .zshrc

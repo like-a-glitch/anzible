@@ -10,6 +10,7 @@
     - appsWithoutSetup
     - git
     - vscodium
+    - zsh
   # end
     - autostart
   vars_files:
