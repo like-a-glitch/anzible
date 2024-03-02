@@ -9,3 +9,8 @@
     mode: "664"
     owner: "{{ remoteUserName }}"
     src: .zshrc
+
+- name: Set zsh as default shell
+  user:
+    name: "{{ remoteUserName }}"
+    shell: "/bin/zsh"
