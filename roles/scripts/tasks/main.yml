@@ -1,0 +1,14 @@
+- name: Create scripts dir
+  file:
+    group: "{{ remoteUserName }}"
+    mode: "775"
+    owner: "{{ remoteUserName }}"
+    path: "/home/{{ remoteUserName }}/.scripts"
+    state: directory
+
+- name: Clone scripts repo
+  become_user: "{{ remoteUserName }}"
+  git:
+    dest: "/home/{{ remoteUserName }}/.scripts"
+    force: true
+    repo: https://github.com/like-a-glitch/scripts.git
