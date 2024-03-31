@@ -5,5 +5,5 @@
 # Run
 
 ```
-sudo ansible-playbook playbook.yml
+sudo ansible-playbook playbook.yml -e "remoteUserName=INSERT_USER_NAME"
 ```
