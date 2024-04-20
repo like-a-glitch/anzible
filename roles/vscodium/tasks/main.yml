@@ -43,6 +43,7 @@
     - eamodio.gitlens
     - ms-toolsai.jupyter
     - redhat.ansible
+    - timonwong.shellcheck
 
 - name: Set vscodium as default editor for multiple mime types
   become_user: "{{ remoteUserName }}"
