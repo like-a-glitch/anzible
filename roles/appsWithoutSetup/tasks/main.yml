@@ -5,6 +5,7 @@
       - libreoffice
       - pavucontrol
       - pdfarranger
+      - simple-scan
 
 - name: Install flatpack packages
   flatpak:
