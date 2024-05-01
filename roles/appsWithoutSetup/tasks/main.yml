@@ -3,6 +3,7 @@
   package:
     name:
       - libreoffice
+      - pavucontrol
       - pdfarranger
 
 - name: Install flatpack packages
