@@ -2,6 +2,7 @@
 - name: Install packages
   package:
     name:
+      - deja-dup
       - libreoffice
       - mumble
       - pavucontrol
