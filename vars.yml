@@ -1,4 +1,4 @@
 ---
 
 autostartDict: {}
-remoteUserName: "{{ required }}"
+remoteUserName: user7
