@@ -1,4 +1,6 @@
 ---
 
 autostartDict: {}
+keybindingsDict: {}
 remoteUserName: user7
+singleQuote: "'"

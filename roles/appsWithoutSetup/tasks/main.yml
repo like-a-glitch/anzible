@@ -28,3 +28,7 @@
     - { key: "signal-desktop", value: "signal-desktop --start-in-tray" }
     - { key: "syncthing-gtk", value: "syncthing-gtk" }
     - { key: "thunderbird", value: "flatpak run org.mozilla.Thunderbird" }
+
+- name: Add to keybindingsDict
+  set_fact:
+    keybindingsDict: "{{ keybindingsDict | combine({ '<Primary><Alt>k' : 'keepassxc' }) }}"
