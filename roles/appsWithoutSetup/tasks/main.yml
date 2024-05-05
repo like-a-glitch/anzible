@@ -7,6 +7,7 @@
       - mumble
       - pavucontrol
       - pdfarranger
+      - python3-psutil
       - simple-scan
       - syncthing-gtk
 
