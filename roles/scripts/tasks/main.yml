@@ -1,14 +1,29 @@
-- name: Create scripts dir
-  file:
-    group: "{{ remoteUserName }}"
-    mode: "775"
-    owner: "{{ remoteUserName }}"
-    path: "/home/{{ remoteUserName }}/.scripts"
+- name: Create tmp dir
+  changed_when: false
+  register: tmpDir
+  tempfile:
     state: directory
 
 - name: Clone scripts repo
-  become_user: "{{ remoteUserName }}"
+  changed_when: false
   git:
-    dest: "/home/{{ remoteUserName }}/.scripts"
-    force: true
+    dest: "{{ tmpDir.path }}"
     repo: https://github.com/like-a-glitch/scripts.git
+
+- name: Remove .git dir
+  changed_when: false
+  file:
+    path: "{{ tmpDir.path }}/.git"
+    state: absent
+
+- name: Copy scripts to /usr/local/bin/
+  copy:
+    dest: /usr/local/bin/
+    mode: '755'
+    src: "{{ tmpDir.path }}/"
+
+- name: Remove tmp dir
+  changed_when: false
+  file:
+    path: "{{ tmpDir.path }}"
+    state: absent
