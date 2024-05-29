@@ -10,11 +10,14 @@
     dest: "{{ tmpDir.path }}"
     repo: https://github.com/like-a-glitch/scripts.git
 
-- name: Remove .git dir
+- name: Remove license and .git dir
   changed_when: false
   file:
-    path: "{{ tmpDir.path }}/.git"
+    path: "{{ tmpDir.path }}/{{ item }}"
     state: absent
+  loop: 
+    - .git
+    - LICENSE
 
 - name: Copy scripts to /usr/local/bin/
   copy:
