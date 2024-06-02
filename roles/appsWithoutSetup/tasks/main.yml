@@ -10,6 +10,7 @@
       - python3-psutil
       - simple-scan
       - syncthing-gtk
+      - vlc
 
 - name: Install flatpack packages
   flatpak:
