@@ -5,11 +5,11 @@
 # Run
 
 ```
-sudo ansible-playbook playbook.yml
+sudo ansible-playbook playbook.yml -i inventory.yml --limit=$(hostname)
 ```
 
 *or if not set in [vars.yml](./vars.yml):*
 
 ```
-sudo ansible-playbook playbook.yml -e "remoteUserName=INSERT_USER_NAME"
+-e "remoteUserName=INSERT_USER_NAME"
 ```
