@@ -23,13 +23,19 @@
       - signal-desktop
       - spotify
 
-- name: Add to autostartDict
+- name: Add signal-desktop to autostartDict
   set_fact:
-    autostartDict: "{{ autostartDict | combine({ item.key : item.value }) }}"
-  with_items:
-    - { key: "signal-desktop", value: "signal-desktop --start-in-tray" }
-    - { key: "syncthing-gtk", value: "syncthing-gtk" }
-    - { key: "thunderbird", value: "flatpak run org.mozilla.Thunderbird" }
+    autostartDict: "{{ autostartDict | combine({ 'signal-desktop' : 'signal-desktop --start-in-tray' }) }}"
+  when: autostartSignal
+
+- name: Add syncthing-gtk to autostartDict
+  set_fact:
+    autostartDict: "{{ autostartDict | combine({ 'syncthing-gtk' : 'syncthing-gtk' }) }}"
+
+- name: Add thunderbird to autostartDict
+  set_fact:
+    autostartDict: "{{ autostartDict | combine({ 'thunderbird' : 'flatpak run org.mozilla.Thunderbird' }) }}"
+  when: autostartThunderbird
 
 - name: Add to keybindingsDict
   set_fact:

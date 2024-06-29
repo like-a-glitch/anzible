@@ -1,2 +1,6 @@
-a-laptop
-a-pc
+all:
+  hosts:
+    a-laptop:
+    a-pc:
+      autostartSignal: true
+      autostartThunderbird: true
