@@ -42,6 +42,7 @@
   loop:
     - eamodio.gitlens
     - ms-toolsai.jupyter
+    - muhammad-sammy.csharp
     - redhat.ansible
     - timonwong.shellcheck
 
