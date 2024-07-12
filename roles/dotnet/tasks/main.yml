@@ -1,0 +1,3 @@
+- name: Install 'dotnet'
+  package:
+    name: dotnet-sdk-8.0

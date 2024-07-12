@@ -2,14 +2,31 @@
 
 - become: true
   connection: local
-  hosts: 
-    - a-laptop
-    - a-pc
+  hosts: a-laptop
   roles:
   # start
     - init
   # random
     - appsWithoutSetup
+    - git
+    - scripts
+    - vscodium
+    - zsh
+  # end
+    - autostart
+    - keybindings
+  vars_files:
+    - vars.yml
+
+- become: true
+  connection: local
+  hosts: a-pc
+  roles:
+  # start
+    - init
+  # random
+    - appsWithoutSetup
+    - dotnet
     - git
     - scripts
     - vscodium
