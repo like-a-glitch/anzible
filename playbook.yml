@@ -10,6 +10,7 @@
     - appsWithoutSetup
     - git
     - scripts
+    - thumbnailer
     - vscodium
     - zsh
   # end
@@ -29,6 +30,7 @@
     - dotnet
     - git
     - scripts
+    - thumbnailer
     - vscodium
     - zsh
   # end

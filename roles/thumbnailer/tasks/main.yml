@@ -1,0 +1,11 @@
+- name: Install 'ffmpegthumbnailer'
+  package:
+    name: ffmpegthumbnailer
+
+- name: Copy settings file
+  copy:
+    dest: '/usr/share/thumbnailers/ffmpegthumbnailer.thumbnailer'
+    group: root
+    mode: '644'
+    owner: root
+    src: ffmpegthumbnailer.thumbnailer
