@@ -1,0 +1,5 @@
+--embed-metadata
+--embed-thumbnail
+--merge-output-format mp4
+--paths '~/Videos/yt-dlp'
+--paths 'temp:/tmp'

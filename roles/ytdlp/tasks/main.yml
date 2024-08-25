@@ -1,0 +1,19 @@
+- name: Install 'yt-dlp'
+  package:
+    name: yt-dlp
+
+- name: Create config dir
+  file:
+    group: "{{ remoteUserName }}"
+    mode: '700'
+    owner: "{{ remoteUserName }}"
+    path: "/home/{{ remoteUserName }}/.config/yt-dlp"
+    state: directory
+
+- name: Copy settings file
+  copy:
+    dest: "/home/{{ remoteUserName }}/.config/yt-dlp/config"
+    group: "{{ remoteUserName }}"
+    mode: '664'
+    owner: "{{ remoteUserName }}"
+    src: config
