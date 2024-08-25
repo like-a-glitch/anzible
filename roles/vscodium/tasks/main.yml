@@ -6,7 +6,7 @@
 - name: Create config dir
   file:
     group: "{{ remoteUserName }}"
-    mode: "u=rwx,g=,o="
+    mode: '700'
     owner: "{{ remoteUserName }}"
     path: "{{ configPath }}"
     state: directory
@@ -14,7 +14,7 @@
 - name: Create config sub dir
   file:
     group: "{{ remoteUserName }}"
-    mode: "u=rwx,g=rwx,o=rx"
+    mode: '775'
     owner: "{{ remoteUserName }}"
     path: "{{ configPath }}/User"
     state: directory
@@ -23,7 +23,7 @@
   copy:
     dest: "{{ configPath }}/User/settings.json"
     group: "{{ remoteUserName }}"
-    mode: "u=rw,g=rw,o=r"
+    mode: '664'
     owner: "{{ remoteUserName }}"
     src: settings.json
 
@@ -31,7 +31,7 @@
   copy:
     dest: "{{ configPath }}/User/keybindings.json"
     group: "{{ remoteUserName }}"
-    mode: "u=rw,g=rw,o=r"
+    mode: '664'
     owner: "{{ remoteUserName }}"
     src: keybindings.json
 
