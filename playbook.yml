@@ -6,12 +6,14 @@
   roles:
   # start
     - init
-  # random
+  # random order
     - appsWithoutSetup
     - git
+    - mpv
     - scripts
     - thumbnailer
     - vscodium
+    - ytdlp
     - zsh
   # end
     - autostart
@@ -25,10 +27,11 @@
   roles:
   # start
     - init
-  # random
+  # random order
     - appsWithoutSetup
     - dotnet
     - git
+    - mpv
     - scripts
     - thumbnailer
     - vscodium
