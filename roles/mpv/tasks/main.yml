@@ -1,0 +1,19 @@
+- name: Install 'mpv'
+  package:
+    name: mpv
+
+- name: Create config dir
+  file:
+    group: "{{ remoteUserName }}"
+    mode: '700'
+    owner: "{{ remoteUserName }}"
+    path: "/home/{{ remoteUserName }}/.config/mpv"
+    state: directory
+
+- name: Copy settings file
+  copy:
+    dest: "/home/{{ remoteUserName }}/.config/mpv/mpv.conf"
+    group: "{{ remoteUserName }}"
+    mode: '664'
+    owner: "{{ remoteUserName }}"
+    src: mpv.conf
