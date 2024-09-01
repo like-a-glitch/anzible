@@ -17,3 +17,45 @@
     mode: '664'
     owner: "{{ remoteUserName }}"
     src: mpv.conf
+
+- name: Create scripts dir
+  file:
+    group: "{{ remoteUserName }}"
+    mode: '700'
+    owner: "{{ remoteUserName }}"
+    path: "/home/{{ remoteUserName }}/.config/mpv/scripts"
+    state: directory
+
+- name: Create tmp dir
+  changed_when: false
+  register: tmpDir
+  tempfile:
+    state: directory
+
+- name: Clone mpv_sponsorblock repo
+  changed_when: false
+  git:
+    dest: "{{ tmpDir.path }}"
+    repo: https://github.com/po5/mpv_sponsorblock.git
+
+- name: Copy sponsorblock files 1
+  copy:
+    dest: "/home/{{ remoteUserName }}/.config/mpv/scripts/"
+    group: "{{ remoteUserName }}"
+    mode: '755'
+    owner: "{{ remoteUserName }}"
+    src: "{{ tmpDir.path }}/sponsorblock.lua"
+
+- name: Copy sponsorblock files 2
+  copy:
+    dest: "/home/{{ remoteUserName }}/.config/mpv/scripts/"
+    group: "{{ remoteUserName }}"
+    mode: '755'
+    owner: "{{ remoteUserName }}"
+    src: "{{ tmpDir.path }}/sponsorblock_shared"
+  
+- name: Remove tmp dir
+  changed_when: false
+  file:
+    path: "{{ tmpDir.path }}"
+    state: absent
