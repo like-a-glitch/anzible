@@ -10,6 +10,14 @@
     path: "/home/{{ remoteUserName }}/.config/mpv"
     state: directory
 
+- name: Copy keybindings file
+  copy:
+    dest: "/home/{{ remoteUserName }}/.config/mpv/input.conf"
+    group: "{{ remoteUserName }}"
+    mode: '664'
+    owner: "{{ remoteUserName }}"
+    src: input.conf
+
 - name: Copy settings file
   copy:
     dest: "/home/{{ remoteUserName }}/.config/mpv/mpv.conf"
