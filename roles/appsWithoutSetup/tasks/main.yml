@@ -9,6 +9,7 @@
       - pdfarranger
       - python3-psutil
       - simple-scan
+      - streamlink
       - syncthing-gtk
       - vlc
 
