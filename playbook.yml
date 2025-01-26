@@ -11,6 +11,7 @@
     - git
     - mpv
     - scripts
+    - syncthing
     - thumbnailer
     - vscodium
     - ytdlp
@@ -33,6 +34,7 @@
     - git
     - mpv
     - scripts
+    - syncthing
     - thumbnailer
     - vscodium
     - ytdlp

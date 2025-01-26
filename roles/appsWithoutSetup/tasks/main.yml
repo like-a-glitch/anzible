@@ -10,7 +10,6 @@
       - python3-psutil
       - simple-scan
       - streamlink
-      - syncthing-gtk
       - vlc
 
 - name: Install flatpack packages
@@ -28,10 +27,6 @@
   set_fact:
     autostartDict: "{{ autostartDict | combine({ 'signal-desktop' : 'signal-desktop --start-in-tray' }) }}"
   when: autostartSignal
-
-- name: Add syncthing-gtk to autostartDict
-  set_fact:
-    autostartDict: "{{ autostartDict | combine({ 'syncthing-gtk' : 'syncthing-gtk' }) }}"
 
 - name: Add thunderbird to autostartDict
   set_fact:

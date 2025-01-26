@@ -1,0 +1,17 @@
+---
+
+- name: Install 'syncthing'
+  package:
+    name: syncthing-gtk
+
+- name: Add syncthing-gtk to autostartDict
+  set_fact:
+    autostartDict: "{{ autostartDict | combine({ 'syncthing-gtk' : 'syncthing-gtk' }) }}"
+
+- name: Create content dir
+  file:
+    group: "{{ remoteUserName }}"
+    mode: '775'
+    owner: "{{ remoteUserName }}"
+    path: "/home/{{ remoteUserName }}/syncthing-main"
+    state: directory
