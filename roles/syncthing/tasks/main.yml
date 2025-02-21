@@ -6,7 +6,7 @@
 
 - name: Add syncthing-gtk to autostartDict
   set_fact:
-    autostartDict: "{{ autostartDict | combine({ 'syncthing-gtk' : 'syncthing-gtk' }) }}"
+    autostartDict: "{{ autostartDict | combine({'syncthing-gtk': 'syncthing-gtk'}) }}"
 
 - name: Create content dir
   file:

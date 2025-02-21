@@ -2,6 +2,7 @@
 - name: Install packages
   package:
     name:
+      - ansible-lint
       - deja-dup
       - exfatprogs
       - libreoffice
@@ -26,14 +27,14 @@
 
 - name: Add signal-desktop to autostartDict
   set_fact:
-    autostartDict: "{{ autostartDict | combine({ 'signal-desktop' : 'signal-desktop --start-in-tray' }) }}"
+    autostartDict: "{{ autostartDict | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
   when: autostartSignal
 
 - name: Add thunderbird to autostartDict
   set_fact:
-    autostartDict: "{{ autostartDict | combine({ 'thunderbird' : 'flatpak run org.mozilla.Thunderbird' }) }}"
+    autostartDict: "{{ autostartDict | combine({'thunderbird': 'flatpak run org.mozilla.Thunderbird'}) }}"
   when: autostartThunderbird
 
 - name: Add to keybindingsDict
   set_fact:
-    keybindingsDict: "{{ keybindingsDict | combine({ '<Primary><Alt>k' : 'keepassxc' }) }}"
+    keybindingsDict: "{{ keybindingsDict | combine({'<Primary><Alt>k': 'keepassxc'}) }}"

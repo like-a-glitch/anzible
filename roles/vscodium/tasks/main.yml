@@ -62,4 +62,4 @@
 
 - name: Add to keybindingsDict
   set_fact:
-    keybindingsDict: "{{ keybindingsDict | combine({ '<Primary><Alt>c' : 'codium' }) }}"
+    keybindingsDict: "{{ keybindingsDict | combine({'<Primary><Alt>c': 'codium'}) }}"
