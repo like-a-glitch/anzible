@@ -1,0 +1,10 @@
+- name: Install 'virtualenv'
+  package:
+    name: virtualenv
+
+# https://github.com/abcminiuser/python-elgato-streamdeck
+- name: Install 'streamdeck'
+  become_user: "{{ remoteUserName }}"
+  pip:
+    name: streamdeck
+    virtualenv: "/home/{{ remoteUserName }}/.virtualenv/streamdeck"
