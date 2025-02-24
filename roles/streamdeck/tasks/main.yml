@@ -8,3 +8,11 @@
   pip:
     name: streamdeck
     virtualenv: "/home/{{ remoteUserName }}/.virtualenv/streamdeck"
+
+- name: Copy udev rules
+  copy:
+    dest: /etc/udev/rules.d/
+    group: root
+    mode: '644'
+    owner: root
+    src: 10-streamdeck.rules
