@@ -18,3 +18,20 @@
     mode: '644'
     owner: root
     src: 10-streamdeck.rules
+
+- name: Copy user service file
+  template:
+    dest: "/home/{{ remoteUserName }}/.config/systemd/user/streamdeck.service"
+    group: "{{ remoteUserName }}"
+    mode: '664'
+    owner: "{{ remoteUserName }}"
+    src: streamdeck.service.j2
+
+- name: Enable streamdeck user service
+  become_user: "{{ remoteUserName }}"
+  systemd:
+    daemon_reload: true
+    enabled: true
+    name: streamdeck
+    scope: user
+    state: started

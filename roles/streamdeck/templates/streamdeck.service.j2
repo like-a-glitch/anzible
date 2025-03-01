@@ -1,0 +1,10 @@
+[Unit]
+After=graphical-session.target
+BindsTo=graphical-session.target
+
+[Service]
+ExecStart=/home/{{ remoteUserName }}/.virtualenv/streamdeck/bin/python3 /home/{{ remoteUserName }}/.virtualenv/streamdeck/streamdeck.py
+KillMode=process
+
+[Install]
+WantedBy=graphical-session.target
