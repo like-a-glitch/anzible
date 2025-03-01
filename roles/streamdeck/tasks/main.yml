@@ -6,7 +6,9 @@
 - name: Install 'streamdeck'
   become_user: "{{ remoteUserName }}"
   pip:
-    name: streamdeck
+    name:
+      - pillow
+      - streamdeck
     virtualenv: "/home/{{ remoteUserName }}/.virtualenv/streamdeck"
 
 - name: Copy udev rules
