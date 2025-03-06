@@ -15,7 +15,7 @@
   file:
     path: "{{ tmpDir.path }}/{{ item }}"
     state: absent
-  loop: 
+  loop:
     - .git
     - LICENSE
 
