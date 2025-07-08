@@ -9,6 +9,7 @@
     - init
   # random order
     - appsWithoutSetup
+    - firefox
     - git
     - mpv
     - scripts
@@ -33,6 +34,7 @@
   # random order
     - appsWithoutSetup
     - dotnet
+    - firefox
     - git
     - mpv
     - scripts

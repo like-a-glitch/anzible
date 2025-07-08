@@ -1,0 +1,23 @@
+- name: Create firefox dir
+  file:
+    group: root
+    mode: '755'
+    owner: root
+    path: '/etc/firefox'
+    state: directory
+
+- name: Create policies dir
+  file:
+    group: root
+    mode: '755'
+    owner: root
+    path: '/etc/firefox/policies'
+    state: directory
+
+- name: Copy policies file
+  copy:
+    dest: '/etc/firefox/policies/policies.json'
+    group: root
+    mode: '664'
+    owner: root
+    src: policies.json

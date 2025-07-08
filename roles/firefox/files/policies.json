@@ -1,0 +1,17 @@
+{
+    "policies": {
+        "AutofillAddressEnabled": false,
+        "AutofillCreditCardEnabled": false,
+        "DisableFirefoxAccounts": true,
+        "DisableTelemetry": true,
+        "FirefoxHome": {
+            "SponsoredTopSites": false,
+            "TopSites": false
+        },
+        "HttpsOnlyMode": "enabled",
+        "OfferToSaveLogins": false,
+        "SearchEngines": {
+            "Default": "DuckDuckGo"
+        }
+    }
+}
