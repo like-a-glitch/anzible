@@ -3,4 +3,3 @@ all:
     a-laptop:
     a-pc:
       autostartSignal: true
-      autostartThunderbird: true
