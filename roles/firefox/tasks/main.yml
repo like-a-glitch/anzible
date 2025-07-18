@@ -1,3 +1,5 @@
+# https://mozilla.github.io/policy-templates
+
 - name: Create firefox dir
   file:
     group: root

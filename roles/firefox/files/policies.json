@@ -24,6 +24,12 @@
         },
         "HttpsOnlyMode": "enabled",
         "OfferToSaveLogins": false,
+        "Preferences": {
+            "browser.bookmarks.autoExportHTML": {
+                "Status": "locked",
+                "Value": true
+            }
+        },
         "SearchEngines": {
             "Default": "DuckDuckGo"
         }
