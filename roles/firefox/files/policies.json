@@ -4,6 +4,9 @@
         "AutofillCreditCardEnabled": false,
         "DisableFirefoxAccounts": true,
         "DisableTelemetry": true,
+        "EnableTrackingProtection": {
+            "Value": true
+        },
         "ExtensionSettings": {
             "idcac-pub@guus.ninja": {
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi",
@@ -30,6 +33,7 @@
                 "Value": true
             }
         },
+        "SanitizeOnShutdown": true,
         "SearchEngines": {
             "Default": "DuckDuckGo"
         }
