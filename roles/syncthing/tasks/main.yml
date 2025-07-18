@@ -4,14 +4,14 @@
   package:
     name: syncthing-gtk
 
-- name: Add syncthing-gtk to autostartDict
+- name: Add syncthing-gtk to autostart_dict
   set_fact:
-    autostartDict: "{{ autostartDict | combine({'syncthing-gtk': 'syncthing-gtk'}) }}"
+    autostart_dict: "{{ autostart_dict | combine({'syncthing-gtk': 'syncthing-gtk'}) }}"
 
 - name: Create content dir
   file:
-    group: "{{ remoteUserName }}"
+    group: "{{ remote_user_name }}"
     mode: '775'
-    owner: "{{ remoteUserName }}"
-    path: "/home/{{ remoteUserName }}/syncthing-main"
+    owner: "{{ remote_user_name }}"
+    path: "/home/{{ remote_user_name }}/syncthing-main"
     state: directory

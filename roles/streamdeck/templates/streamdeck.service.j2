@@ -3,7 +3,7 @@ After=graphical-session.target
 BindsTo=graphical-session.target
 
 [Service]
-ExecStart=/home/{{ remoteUserName }}/.virtualenv/streamdeck/bin/python3 /home/{{ remoteUserName }}/.virtualenv/streamdeck/streamdeck.py
+ExecStart=/home/{{ remote_user_name }}/.virtualenv/streamdeck/bin/python3 /home/{{ remote_user_name }}/.virtualenv/streamdeck/streamdeck.py
 KillMode=process
 
 [Install]

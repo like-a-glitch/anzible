@@ -1,19 +1,19 @@
 - name: Create tmp dir
   changed_when: false
-  register: tmpDir
+  register: tmp_dir
   tempfile:
     state: directory
 
 - name: Clone scripts repo
   changed_when: false
   git:
-    dest: "{{ tmpDir.path }}"
+    dest: "{{ tmp_dir.path }}"
     repo: https://github.com/like-a-glitch/scripts.git
 
 - name: Remove license and .git dir
   changed_when: false
   file:
-    path: "{{ tmpDir.path }}/{{ item }}"
+    path: "{{ tmp_dir.path }}/{{ item }}"
     state: absent
   loop:
     - .git
@@ -23,10 +23,10 @@
   copy:
     dest: /usr/local/bin/
     mode: '755'
-    src: "{{ tmpDir.path }}/"
+    src: "{{ tmp_dir.path }}/"
 
 - name: Remove tmp dir
   changed_when: false
   file:
-    path: "{{ tmpDir.path }}"
+    path: "{{ tmp_dir.path }}"
     state: absent

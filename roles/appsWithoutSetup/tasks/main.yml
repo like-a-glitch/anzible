@@ -25,16 +25,16 @@
       - signal-desktop
       - spotify
 
-- name: Add signal-desktop to autostartDict
+- name: Add signal-desktop to autostart_dict
   set_fact:
-    autostartDict: "{{ autostartDict | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
-  when: autostartSignal
+    autostart_dict: "{{ autostart_dict | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
+  when: autostart_signal
 
-- name: Add thunderbird to autostartDict
+- name: Add thunderbird to autostart_dict
   set_fact:
-    autostartDict: "{{ autostartDict | combine({'thunderbird': 'flatpak run org.mozilla.Thunderbird'}) }}"
-  when: autostartThunderbird
+    autostart_dict: "{{ autostart_dict | combine({'thunderbird': 'flatpak run org.mozilla.Thunderbird'}) }}"
+  when: autostart_thunderbird
 
-- name: Add to keybindingsDict
+- name: Add to keybindings_dict
   set_fact:
-    keybindingsDict: "{{ keybindingsDict | combine({'<Primary><Alt>k': 'keepassxc'}) }}"
+    keybindings_dict: "{{ keybindings_dict | combine({'<Primary><Alt>k': 'keepassxc'}) }}"

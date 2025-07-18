@@ -8,6 +8,6 @@
     name: flathub
 
 - name: Set firefox as default for pdf
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   changed_when: false
   command: xdg-mime default firefox_firefox.desktop application/pdf

@@ -1,45 +1,45 @@
 - name: Set keybinding for web browser
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/www"
     value: "['<Primary><Alt>b']"
 
 - name: Set custom-keybindings binding
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom{{ loop_index }}/binding"
     value: "'{{ item.key }}'"
-  loop: "{{ keybindingsDict | dict2items }}"
+  loop: "{{ keybindings_dict | dict2items }}"
   loop_control:
     index_var: loop_index
 
 - name: Set custom-keybindings command
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom{{ loop_index }}/command"
     value: "'{{ item.value }}'"
-  loop: "{{ keybindingsDict | dict2items }}"
+  loop: "{{ keybindings_dict | dict2items }}"
   loop_control:
     index_var: loop_index
 
 - name: Set custom-keybindings name
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom{{ loop_index }}/name"
     value: "'{{ item.value }}'"
-  loop: "{{ keybindingsDict | dict2items }}"
+  loop: "{{ keybindings_dict | dict2items }}"
   loop_control:
     index_var: loop_index
 
-- name: Build keybindingsList
+- name: Build keybindings_list
   set_fact:
-    keybindingsList: "{{ keybindingsList | default([]) + [ singleQuote ~ '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom' ~ loop_index ~ '/' ~ singleQuote ] }}"
-  loop: "{{ keybindingsDict | dict2items }}"
+    keybindings_list: "{{ keybindings_list | default([]) + [ single_quote ~ '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom' ~ loop_index ~ '/' ~ single_quote ] }}"
+  loop: "{{ keybindings_dict | dict2items }}"
   loop_control:
     index_var: loop_index
 
 - name: Set custom-keybindings array
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
-    value: "{{ '[' ~ keybindingsList | join(', ') ~ ']' | string }}"
+    value: "{{ '[' ~ keybindings_list | join(', ') ~ ']' | string }}"

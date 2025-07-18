@@ -4,13 +4,13 @@
 
 - name: Copy settings file
   copy:
-    dest: "/home/{{ remoteUserName }}/.zshrc"
-    group: "{{ remoteUserName }}"
+    dest: "/home/{{ remote_user_name }}/.zshrc"
+    group: "{{ remote_user_name }}"
     mode: "664"
-    owner: "{{ remoteUserName }}"
+    owner: "{{ remote_user_name }}"
     src: .zshrc
 
 - name: Set zsh as default shell
   user:
-    name: "{{ remoteUserName }}"
+    name: "{{ remote_user_name }}"
     shell: "/bin/zsh"

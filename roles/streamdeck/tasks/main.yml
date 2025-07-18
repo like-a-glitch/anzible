@@ -4,12 +4,12 @@
 
 # https://github.com/abcminiuser/python-elgato-streamdeck
 - name: Install 'streamdeck'
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   pip:
     name:
       - pillow
       - streamdeck
-    virtualenv: "/home/{{ remoteUserName }}/.virtualenv/streamdeck"
+    virtualenv: "/home/{{ remote_user_name }}/.virtualenv/streamdeck"
 
 - name: Copy udev rules
   copy:
@@ -21,14 +21,14 @@
 
 - name: Copy user service file
   template:
-    dest: "/home/{{ remoteUserName }}/.config/systemd/user/streamdeck.service"
-    group: "{{ remoteUserName }}"
+    dest: "/home/{{ remote_user_name }}/.config/systemd/user/streamdeck.service"
+    group: "{{ remote_user_name }}"
     mode: '664'
-    owner: "{{ remoteUserName }}"
+    owner: "{{ remote_user_name }}"
     src: streamdeck.service.j2
 
 - name: Enable streamdeck user service
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   systemd:
     daemon_reload: true
     enabled: true

@@ -4,16 +4,16 @@
 
 - name: Create config dir
   file:
-    group: "{{ remoteUserName }}"
+    group: "{{ remote_user_name }}"
     mode: '700'
-    owner: "{{ remoteUserName }}"
-    path: "/home/{{ remoteUserName }}/.config/yt-dlp"
+    owner: "{{ remote_user_name }}"
+    path: "/home/{{ remote_user_name }}/.config/yt-dlp"
     state: directory
 
 - name: Copy settings file
   copy:
-    dest: "/home/{{ remoteUserName }}/.config/yt-dlp/config"
-    group: "{{ remoteUserName }}"
+    dest: "/home/{{ remote_user_name }}/.config/yt-dlp/config"
+    group: "{{ remote_user_name }}"
     mode: '664'
-    owner: "{{ remoteUserName }}"
+    owner: "{{ remote_user_name }}"
     src: config

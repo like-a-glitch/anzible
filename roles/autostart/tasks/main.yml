@@ -1,16 +1,16 @@
 - name: Create config dir
   file:
-    group: "{{ remoteUserName }}"
+    group: "{{ remote_user_name }}"
     mode: "700"
-    owner: "{{ remoteUserName }}"
-    path: "/home/{{ remoteUserName }}/.config/autostart"
+    owner: "{{ remote_user_name }}"
+    path: "/home/{{ remote_user_name }}/.config/autostart"
     state: directory
 
 - name: Copy autostart template
-  loop: "{{ autostartDict | dict2items }}"
+  loop: "{{ autostart_dict | dict2items }}"
   template:
-    dest: "/home/{{ remoteUserName }}/.config/autostart/{{ item.key }}.desktop"
-    group: "{{ remoteUserName }}"
+    dest: "/home/{{ remote_user_name }}/.config/autostart/{{ item.key }}.desktop"
+    group: "{{ remote_user_name }}"
     mode: "664"
-    owner: "{{ remoteUserName }}"
+    owner: "{{ remote_user_name }}"
     src: autostart.desktop.j2

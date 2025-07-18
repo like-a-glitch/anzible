@@ -5,38 +5,38 @@
 
 - name: Create config dir
   file:
-    group: "{{ remoteUserName }}"
+    group: "{{ remote_user_name }}"
     mode: '700'
-    owner: "{{ remoteUserName }}"
-    path: "{{ configPath }}"
+    owner: "{{ remote_user_name }}"
+    path: "{{ config_path }}"
     state: directory
 
 - name: Create config sub dir
   file:
-    group: "{{ remoteUserName }}"
+    group: "{{ remote_user_name }}"
     mode: '775'
-    owner: "{{ remoteUserName }}"
-    path: "{{ configPath }}/User"
+    owner: "{{ remote_user_name }}"
+    path: "{{ config_path }}/User"
     state: directory
 
 - name: Copy settings file
   copy:
-    dest: "{{ configPath }}/User/settings.json"
-    group: "{{ remoteUserName }}"
+    dest: "{{ config_path }}/User/settings.json"
+    group: "{{ remote_user_name }}"
     mode: '664'
-    owner: "{{ remoteUserName }}"
+    owner: "{{ remote_user_name }}"
     src: settings.json
 
 - name: Copy keybindings file
   copy:
-    dest: "{{ configPath }}/User/keybindings.json"
-    group: "{{ remoteUserName }}"
+    dest: "{{ config_path }}/User/keybindings.json"
+    group: "{{ remote_user_name }}"
     mode: '664'
-    owner: "{{ remoteUserName }}"
+    owner: "{{ remote_user_name }}"
     src: keybindings.json
 
 - name: Install extensions
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   changed_when: false
   command: "codium --install-extension {{ item }}"
   loop:
@@ -47,7 +47,7 @@
     - timonwong.shellcheck
 
 - name: Set vscodium as default editor for multiple mime types
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   changed_when: false
   command: "xdg-mime default codium_codium.desktop {{ item }}"
   loop:
@@ -60,6 +60,6 @@
     - text/plain
     - text/x-python
 
-- name: Add to keybindingsDict
+- name: Add to keybindings_dict
   set_fact:
-    keybindingsDict: "{{ keybindingsDict | combine({'<Primary><Alt>c': 'codium'}) }}"
+    keybindings_dict: "{{ keybindings_dict | combine({'<Primary><Alt>c': 'codium'}) }}"

@@ -1,1 +1,1 @@
-configPath: "/home/{{ remoteUserName }}/.config/VSCodium"
+config_path: "/home/{{ remote_user_name }}/.config/VSCodium"

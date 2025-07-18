@@ -5,21 +5,21 @@
     name: git
 
 - name: Set init.defaultbranch
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   git_config:
     name: init.defaultbranch
     scope: global
     value: main
 
 - name: Set user.email
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   git_config:
     name: user.email
     scope: global
     value: 156898711+like-a-glitch@users.noreply.github.com
 
 - name: Set user.name
-  become_user: "{{ remoteUserName }}"
+  become_user: "{{ remote_user_name }}"
   git_config:
     name: user.name
     scope: global
