@@ -1,4 +1,6 @@
 {
+    "ansible.lightspeed.enabled": false,
+    "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "on",
     "git.autofetch": "all",
