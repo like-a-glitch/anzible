@@ -33,7 +33,15 @@
                 "Value": true
             }
         },
-        "SanitizeOnShutdown": true,
+        "SanitizeOnShutdown": {
+            "Cache": true,
+            "Cookies": true,
+            "FormData": true,
+            "History": true,
+            "Locked": true,
+            "Sessions": true,
+            "SiteSettings": false
+        },
         "SearchEngines": {
             "Default": "DuckDuckGo"
         }
