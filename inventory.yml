@@ -3,3 +3,4 @@ all:
     a-laptop:
     a-pc:
       autostart_signal: true
+    a-tv-box:

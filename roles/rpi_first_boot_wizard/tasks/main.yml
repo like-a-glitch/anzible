@@ -1,0 +1,11 @@
+---
+- name: Remove rpi-first-boot-wizard user
+  ansible.builtin.user:
+    force: true
+    name: rpi-first-boot-wizard
+    state: absent
+
+- name: Remove piwiz
+  ansible.builtin.package:
+    name: piwiz
+    state: absent

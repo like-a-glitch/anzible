@@ -49,3 +49,15 @@
     - keybindings
   vars_files:
     - vars.yml
+
+- name: Host a-tv-box
+  become: true
+  hosts: a-tv-box
+  remote_user: pi
+  pre_tasks:
+    - name: Update apt
+      ansible.builtin.apt:
+        update_cache: true
+  roles:
+  # start
+    - rpi_first_boot_wizard
