@@ -1,0 +1,8 @@
+---
+- name: Create guest user
+  ansible.builtin.user:
+    name: 'guest'
+
+- name: Delete guest user password
+  ansible.builtin.command: 'passwd -d guest'
+  changed_when: false

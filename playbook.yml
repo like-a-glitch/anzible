@@ -60,4 +60,5 @@
         update_cache: true
   roles:
   # start
+    - guest_user
     - rpi_first_boot_wizard
