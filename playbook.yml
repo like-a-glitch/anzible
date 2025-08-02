@@ -55,10 +55,13 @@
   hosts: a-tv-box
   remote_user: pi
   pre_tasks:
-    - name: Update apt
+    - name: Update and upgrade apt
       ansible.builtin.apt:
         update_cache: true
+        upgrade: true
   roles:
   # start
     - guest_user
     - rpi_first_boot_wizard
+  # random order
+    - firefox
