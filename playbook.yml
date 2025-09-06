@@ -37,6 +37,7 @@
     - firefox
     - git
     - mpv
+    - rust
     - scripts
     - streamdeck
     - syncthing

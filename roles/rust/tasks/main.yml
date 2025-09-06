@@ -1,0 +1,19 @@
+- name: Create tmp dir
+  ansible.builtin.tempfile:
+    state: directory
+  become_user: "{{ remote_user_name }}"
+  changed_when: false
+  register: tmp_dir
+
+- name: Get Rust installer
+  ansible.builtin.get_url:
+    dest: "{{ tmp_dir.path }}"
+    mode: '755'
+    url: https://sh.rustup.rs
+  changed_when: false
+
+- name: Execute Rust installer
+  ansible.builtin.command:
+    "{{ tmp_dir.path }}/rustup-init.sh -y"
+  become_user: "{{ remote_user_name }}"
+  changed_when: false
