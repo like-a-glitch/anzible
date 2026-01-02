@@ -22,13 +22,7 @@
   snap:
     name:
       - keepassxc
-      - signal-desktop
       - spotify
-
-- name: Add signal-desktop to autostart_dict
-  set_fact:
-    autostart_dict: "{{ autostart_dict | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
-  when: autostart_signal
 
 - name: Add thunderbird to autostart_dict
   set_fact:
