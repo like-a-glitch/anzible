@@ -6,8 +6,3 @@
   flatpak_remote:
     flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
     name: flathub
-
-- name: Set firefox as default for pdf
-  become_user: "{{ remote_user_name }}"
-  changed_when: false
-  command: xdg-mime default firefox_firefox.desktop application/pdf
