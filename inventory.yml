@@ -1,6 +1,11 @@
 all:
-  hosts:
-    a-laptop:
-    a-pc:
-      autostart_signal: true
-    a-tv-box:
+  children:
+    group_laptop:
+      hosts:
+        a-laptop:
+          ansible_connection: local
+    group_pc:
+      hosts:
+        a-pc:
+          ansible_connection: local
+          autostart_signal: true

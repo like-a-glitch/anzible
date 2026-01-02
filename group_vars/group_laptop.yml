@@ -1,0 +1,17 @@
+host_roles:
+# start
+  - init
+# random order
+  - appsWithoutSetup
+  - firefox
+  - git
+  - mpv
+  - scripts
+  - syncthing
+  - thumbnailer
+  - vscodium
+  - ytdlp
+  - zsh
+# end
+  - autostart
+  - keybindings

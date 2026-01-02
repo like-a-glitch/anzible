@@ -1,0 +1,20 @@
+host_roles:
+# start
+  - init
+# random order
+  - appsWithoutSetup
+  - dotnet
+  - firefox
+  - git
+  - mpv
+  - rust
+  - scripts
+  - streamdeck
+  - syncthing
+  - thumbnailer
+  - vscodium
+  - ytdlp
+  - zsh
+# end
+  - autostart
+  - keybindings
