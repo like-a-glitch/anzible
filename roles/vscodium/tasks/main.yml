@@ -44,6 +44,7 @@
     - ms-toolsai.jupyter
     - muhammad-sammy.csharp
     - redhat.ansible
+    - samuelcolvin.jinjahtml
     - timonwong.shellcheck
 
 - name: Set vscodium as default editor for multiple mime types
