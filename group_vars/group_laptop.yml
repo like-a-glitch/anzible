@@ -2,6 +2,9 @@ host_roles:
 # start
   - apt_update_upgrade
 # random order
+  - firefox
+  - git
+  - vscodium
   - zsh
 # end
   - autostart
