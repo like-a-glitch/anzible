@@ -1,17 +1,7 @@
 host_roles:
 # start
-  - init
+  - apt_update_upgrade
 # random order
-  - appsWithoutSetup
-  - firefox
-  - git
-  - mpv
-  - scripts
-  - signal
-  - syncthing
-  - thumbnailer
-  - vscodium
-  - ytdlp
   - zsh
 # end
   - autostart
