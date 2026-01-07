@@ -33,7 +33,11 @@
 
 - name: Build keybindings_list
   set_fact:
-    keybindings_list: "{{ keybindings_list | default([]) + [ single_quote ~ '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom' ~ loop_index ~ '/' ~ single_quote ] }}"
+    keybindings_list: >
+      {{
+        keybindings_list | default([]) +
+        [ single_quote ~ '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom' ~ loop_index ~ '/' ~ single_quote ]
+      }}
   loop: "{{ keybindings_dict | dict2items }}"
   loop_control:
     index_var: loop_index
