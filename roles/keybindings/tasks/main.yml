@@ -43,3 +43,4 @@
   dconf:
     key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
     value: "{{ '[' ~ keybindings_list | join(', ') ~ ']' | string }}"
+  when: keybindings_list | length > 0
