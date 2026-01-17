@@ -4,6 +4,7 @@
         "AutofillCreditCardEnabled": false,
         "DisableFirefoxAccounts": true,
         "DisableTelemetry": true,
+        "DisplayBookmarksToolbar": "never",
         "EnableTrackingProtection": {
             "Value": true
         },
@@ -26,7 +27,11 @@
             "TopSites": false
         },
         "HttpsOnlyMode": "enabled",
+        "NoDefaultBookmarks": true,
         "OfferToSaveLogins": false,
+        "OverrideFirstRunPage": "",
+        "OverridePostUpdatePage": "",
+        "PasswordManagerEnabled": false,
         "Preferences": {
             "browser.bookmarks.autoExportHTML": {
                 "Status": "locked",
