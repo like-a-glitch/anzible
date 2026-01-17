@@ -14,7 +14,7 @@
   copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/input.conf"
     group: "{{ remote_user_name }}"
-    mode: '664'
+    mode: '644'
     owner: "{{ remote_user_name }}"
     src: input.conf
 
@@ -22,7 +22,7 @@
   copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/mpv.conf"
     group: "{{ remote_user_name }}"
-    mode: '664'
+    mode: '644'
     owner: "{{ remote_user_name }}"
     src: mpv.conf
 
@@ -50,7 +50,7 @@
   copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/scripts/"
     group: "{{ remote_user_name }}"
-    mode: '755'
+    mode: '700'
     owner: "{{ remote_user_name }}"
     src: "{{ tmp_dir.path }}/sponsorblock.lua"
 
@@ -58,7 +58,7 @@
   copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/scripts/"
     group: "{{ remote_user_name }}"
-    mode: '755'
+    mode: '700'
     owner: "{{ remote_user_name }}"
     src: "{{ tmp_dir.path }}/sponsorblock_shared"
 

@@ -20,7 +20,7 @@
   copy:
     dest: '/etc/firefox/policies/policies.json'
     group: root
-    mode: '664'
+    mode: '644'
     owner: root
     src: policies.json
 

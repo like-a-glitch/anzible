@@ -14,6 +14,6 @@
   copy:
     dest: "/home/{{ remote_user_name }}/.config/yt-dlp/config"
     group: "{{ remote_user_name }}"
-    mode: '664'
+    mode: '644'
     owner: "{{ remote_user_name }}"
     src: config

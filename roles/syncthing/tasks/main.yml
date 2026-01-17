@@ -11,7 +11,7 @@
 - name: Create content dir
   file:
     group: "{{ remote_user_name }}"
-    mode: '775'
+    mode: '700'
     owner: "{{ remote_user_name }}"
     path: "/home/{{ remote_user_name }}/syncthing-main"
     state: directory

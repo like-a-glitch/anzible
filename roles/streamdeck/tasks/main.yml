@@ -23,7 +23,7 @@
   template:
     dest: "/home/{{ remote_user_name }}/.config/systemd/user/streamdeck.service"
     group: "{{ remote_user_name }}"
-    mode: '664'
+    mode: '644'
     owner: "{{ remote_user_name }}"
     src: streamdeck.service.j2
 
