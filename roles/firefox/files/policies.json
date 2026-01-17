@@ -4,7 +4,6 @@
         "AutofillCreditCardEnabled": false,
         "DisableFirefoxAccounts": true,
         "DisableTelemetry": true,
-        "DisplayBookmarksToolbar": "never",
         "EnableTrackingProtection": {
             "Value": true
         },
