@@ -8,4 +8,3 @@ all:
       hosts:
         a-pc:
           ansible_connection: local
-          autostart_signal: true

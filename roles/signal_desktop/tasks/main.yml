@@ -1,0 +1,31 @@
+- name: Download signal-desktop key
+  ansible.builtin.get_url:
+    dest: "{{ signal_desktop_key_asc_path }}"
+    mode: '644'
+    url: 'https://updates.signal.org/desktop/apt/keys.asc'
+
+- name: Dearmor the key
+  ansible.builtin.command:
+    cmd: "gpg --dearmor -o {{ signal_desktop_key_gpg_path }} {{ signal_desktop_key_asc_path }}"
+  args:
+    creates: "{{ signal_desktop_key_gpg_path }}"
+
+- name: Download signal-desktop apt source
+  ansible.builtin.get_url:
+    dest: "{{ signal_desktop_sources_path }}"
+    mode: '644'
+    url: https://updates.signal.org/static/desktop/apt/signal-desktop.sources
+
+- name: Run apt update
+  ansible.builtin.apt:
+    update_cache: true
+  changed_when: false
+
+- name: Install signal-desktop
+  ansible.builtin.apt:
+    name: signal-desktop
+
+- name: Add signal-desktop to autostart_dict
+  set_fact:
+    autostart_dict: "{{ autostart_dict | default({}) | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
+  when: autostart_signal

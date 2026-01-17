@@ -4,6 +4,7 @@ host_roles:
 # random order
   - firefox
   - git
+  - signal_desktop
   - vscodium
   - zsh
 # end

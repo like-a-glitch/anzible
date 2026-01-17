@@ -1,8 +1,0 @@
-- name: Install signal-desktop
-  snap:
-    name: signal-desktop
-
-- name: Add signal-desktop to autostart_dict
-  set_fact:
-    autostart_dict: "{{ autostart_dict | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
-  when: autostart_signal
