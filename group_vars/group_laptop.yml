@@ -2,6 +2,7 @@ host_roles:
 # start
   - apt_update_upgrade
 # random order
+  - element_desktop
   - firefox
   - git
   - signal_desktop
