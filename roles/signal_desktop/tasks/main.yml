@@ -6,9 +6,9 @@
 
 - name: Dearmor the key
   ansible.builtin.command:
-    cmd: "gpg --dearmor -o {{ signal_desktop_key_gpg_path }} {{ signal_desktop_key_asc_path }}"
+    cmd: "gpg --dearmor -o {{ signal_desktop_keyring_path }} {{ signal_desktop_key_asc_path }}"
   args:
-    creates: "{{ signal_desktop_key_gpg_path }}"
+    creates: "{{ signal_desktop_keyring_path }}"
 
 - name: Download signal-desktop apt source
   ansible.builtin.get_url:
@@ -26,6 +26,6 @@
     name: signal-desktop
 
 - name: Add signal-desktop to autostart_dict
-  set_fact:
+  ansible.builtin.set_fact:
     autostart_dict: "{{ autostart_dict | default({}) | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
   when: autostart_signal
