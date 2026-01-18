@@ -1,3 +1,4 @@
+autostart_element: true
 autostart_signal: true
 host_roles:
 # start
@@ -5,11 +6,10 @@ host_roles:
   - init
 # random order
   - appsWithoutSetup
-  - dotnet
+  - element_desktop
   - firefox
   - git
   - mpv
-  - rust
   - scripts
   - signal_desktop
   - streamdeck

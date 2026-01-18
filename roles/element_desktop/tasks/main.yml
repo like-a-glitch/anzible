@@ -1,0 +1,27 @@
+- name: Download element-desktop keyring
+  ansible.builtin.get_url:
+    dest: "{{ element_desktop_keyring_path }}"
+    mode: '644'
+    url: 'https://packages.element.io/debian/element-io-archive-keyring.gpg'
+
+- name: Add element-desktop apt source
+  ansible.builtin.template:
+    dest: "{{ element_desktop_sources_path }}"
+    group: root
+    mode: '644'
+    owner: root
+    src: element-desktop.sources.j2
+
+- name: Run apt update
+  ansible.builtin.apt:
+    update_cache: true
+  changed_when: false
+
+- name: Install element-desktop
+  ansible.builtin.apt:
+    name: element-desktop
+
+- name: Add element-desktop to autostart_dict
+  ansible.builtin.set_fact:
+    autostart_dict: "{{ autostart_dict | default({}) | combine({'element-desktop': 'element-desktop --hidden'}) }}"
+  when: autostart_element
