@@ -1,8 +1,0 @@
-- name: Install 'flatpak'
-  package:
-    name: flatpak
-
-- name: Add flathub repo
-  flatpak_remote:
-    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
-    name: flathub

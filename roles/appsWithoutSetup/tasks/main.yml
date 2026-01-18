@@ -14,20 +14,11 @@
       - streamlink
       - vlc
 
-- name: Install flatpack packages
-  flatpak:
-    name: org.mozilla.Thunderbird
-
 - name: Install snap packages
   snap:
     name:
       - keepassxc
       - spotify
-
-- name: Add thunderbird to autostart_dict
-  set_fact:
-    autostart_dict: "{{ autostart_dict | combine({'thunderbird': 'flatpak run org.mozilla.Thunderbird'}) }}"
-  when: autostart_thunderbird
 
 - name: Add to keybindings_dict
   set_fact:

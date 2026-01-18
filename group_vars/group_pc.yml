@@ -3,7 +3,6 @@ autostart_signal: true
 host_roles:
 # start
   - apt_update_upgrade
-  - init
 # random order
   - appsWithoutSetup
   - element_desktop
