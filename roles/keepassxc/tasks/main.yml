@@ -1,0 +1,7 @@
+- name: Install keepassxc
+  community.general.flatpak:
+    name: org.keepassxc.KeePassXC
+
+- name: Add keepassxc to keybindings_dict
+  ansible.builtin.set_fact:
+    keybindings_dict: "{{ keybindings_dict | default({}) | combine({'<Primary><Alt>k': 'flatpak run org.keepassxc.KeePassXC'}) }}"

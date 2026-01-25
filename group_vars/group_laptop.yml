@@ -5,6 +5,7 @@ host_roles:
   - element_desktop
   - firefox
   - git
+  - keepassxc
   - signal_desktop
   - vscodium
   - zsh
