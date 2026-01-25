@@ -17,9 +17,4 @@
 - name: Install snap packages
   snap:
     name:
-      - keepassxc
       - spotify
-
-- name: Add to keybindings_dict
-  set_fact:
-    keybindings_dict: "{{ keybindings_dict | combine({'<Primary><Alt>k': 'keepassxc'}) }}"
