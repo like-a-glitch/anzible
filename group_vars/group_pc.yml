@@ -4,19 +4,12 @@ host_roles:
 # start
   - apt_update_upgrade
 # random order
-  - appsWithoutSetup
   - element_desktop
   - firefox
   - git
   - keepassxc
-  - mpv
-  - scripts
   - signal_desktop
-  - streamdeck
-  - syncthing
-  - thumbnailer
   - vscodium
-  - ytdlp
   - zsh
 # end
   - autostart

@@ -8,3 +8,5 @@ all:
       hosts:
         a-pc:
           ansible_connection: local
+        a-2nd-pc:
+          ansible_connection: local
