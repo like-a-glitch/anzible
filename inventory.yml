@@ -6,7 +6,5 @@ all:
           ansible_connection: local
     group_pc:
       hosts:
-        a-pc:
-          ansible_connection: local
         a-2nd-pc:
           ansible_connection: local
