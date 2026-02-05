@@ -1,17 +1,7 @@
----
-
-- name: Install 'syncthing'
-  package:
-    name: syncthing-gtk
-
-- name: Add syncthing-gtk to autostart_dict
-  set_fact:
-    autostart_dict: "{{ autostart_dict | combine({'syncthing-gtk': 'syncthing-gtk'}) }}"
-
 - name: Create content dir
-  file:
+  ansible.builtin.file:
     group: "{{ remote_user_name }}"
-    mode: '700'
+    mode: '700' 
     owner: "{{ remote_user_name }}"
     path: "/home/{{ remote_user_name }}/syncthing-main"
     state: directory
