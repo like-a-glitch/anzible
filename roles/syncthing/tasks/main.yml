@@ -1,7 +1,21 @@
 - name: Create content dir
   ansible.builtin.file:
     group: "{{ remote_user_name }}"
-    mode: '700' 
+    mode: '700'
     owner: "{{ remote_user_name }}"
     path: "/home/{{ remote_user_name }}/syncthing-main"
     state: directory
+
+- name: Download syncthing keyring
+  ansible.builtin.get_url:
+    dest: "{{ syncthing_keyring_path }}"
+    mode: '644'
+    url: 'https://syncthing.net/release-key.gpg'
+
+- name: Add syncthing apt source
+  ansible.builtin.template:
+    dest: "{{ syncthing_sources_path }}"
+    group: root
+    mode: '644'
+    owner: root
+    src: syncthing.sources.j2
