@@ -9,6 +9,7 @@ host_roles:
   - git
   - keepassxc
   - signal_desktop
+  - syncthing
   - vscodium
   - zsh
 # end
