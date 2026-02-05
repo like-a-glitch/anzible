@@ -19,3 +19,12 @@
     mode: '644'
     owner: root
     src: syncthing.sources.j2
+
+- name: Run apt update
+  ansible.builtin.apt:
+    update_cache: true
+  changed_when: false
+
+- name: Install syncthing
+  ansible.builtin.apt:
+    name: syncthing
