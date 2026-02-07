@@ -28,3 +28,10 @@
 - name: Install syncthing
   ansible.builtin.apt:
     name: syncthing
+
+- name: Enable syncthing user service
+  ansible.builtin.systemd_service:
+    enabled: true
+    name: syncthing
+    scope: user
+  become_user: "{{ remote_user_name }}"

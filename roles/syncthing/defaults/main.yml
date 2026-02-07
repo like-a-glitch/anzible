@@ -1,2 +1,3 @@
+syncthing_autostart: false
 syncthing_keyring_path: /usr/share/keyrings/syncthing-keyring.gpg
 syncthing_sources_path: /etc/apt/sources.list.d/syncthing.sources
