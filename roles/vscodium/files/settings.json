@@ -3,6 +3,7 @@
     "diffEditor.hideUnchangedRegions.enabled": true,
     "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "on",
+    "files.autoSave": "afterDelay",
     "git.autofetch": "all",
     "git.defaultCloneDirectory": "~/code",
     "git.suggestSmartCommit": false,

@@ -1,0 +1,12 @@
+- name: Install common apt packages
+  ansible.builtin.apt:
+    name:
+      - ansible-lint
+      - libreoffice
+      - pavucontrol
+      - pdfarranger
+
+- name: Install common snap packages
+  community.general.snap:
+    name:
+      - spotify
