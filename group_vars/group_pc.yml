@@ -4,6 +4,7 @@ host_roles:
 # start
   - apt_update_upgrade
 # random order
+  - common_packages
   - element_desktop
   - firefox
   - git

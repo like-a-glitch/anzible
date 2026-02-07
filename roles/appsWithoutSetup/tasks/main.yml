@@ -2,19 +2,10 @@
 - name: Install packages
   package:
     name:
-      - ansible-lint
       - deja-dup
       - exfatprogs
-      - libreoffice
       - mumble
-      - pavucontrol
-      - pdfarranger
       - python3-psutil
       - simple-scan
       - streamlink
       - vlc
-
-- name: Install snap packages
-  snap:
-    name:
-      - spotify
