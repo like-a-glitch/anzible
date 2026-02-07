@@ -1,12 +1,15 @@
+syncthing_autostart: true
 host_roles:
 # start
   - apt_update_upgrade
 # random order
+  - common_packages
   - element_desktop
   - firefox
   - git
   - keepassxc
   - signal_desktop
+  - syncthing
   - vscodium
   - zsh
 # end
