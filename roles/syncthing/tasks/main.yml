@@ -1,17 +1,37 @@
----
-
-- name: Install 'syncthing'
-  package:
-    name: syncthing-gtk
-
-- name: Add syncthing-gtk to autostart_dict
-  set_fact:
-    autostart_dict: "{{ autostart_dict | combine({'syncthing-gtk': 'syncthing-gtk'}) }}"
-
 - name: Create content dir
-  file:
+  ansible.builtin.file:
     group: "{{ remote_user_name }}"
     mode: '700'
     owner: "{{ remote_user_name }}"
     path: "/home/{{ remote_user_name }}/syncthing-main"
     state: directory
+
+- name: Download syncthing keyring
+  ansible.builtin.get_url:
+    dest: "{{ syncthing_keyring_path }}"
+    mode: '644'
+    url: 'https://syncthing.net/release-key.gpg'
+
+- name: Add syncthing apt source
+  ansible.builtin.template:
+    dest: "{{ syncthing_sources_path }}"
+    group: root
+    mode: '644'
+    owner: root
+    src: syncthing.sources.j2
+
+- name: Run apt update
+  ansible.builtin.apt:
+    update_cache: true
+  changed_when: false
+
+- name: Install syncthing
+  ansible.builtin.apt:
+    name: syncthing
+
+- name: Enable syncthing user service
+  ansible.builtin.systemd_service:
+    enabled: true
+    name: syncthing
+    scope: user
+  become_user: "{{ remote_user_name }}"

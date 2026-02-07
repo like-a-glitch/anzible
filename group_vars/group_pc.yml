@@ -1,5 +1,6 @@
 autostart_element: true
 autostart_signal: true
+syncthing_autostart: true
 host_roles:
 # start
   - apt_update_upgrade
@@ -10,6 +11,7 @@ host_roles:
   - git
   - keepassxc
   - signal_desktop
+  - syncthing
   - vscodium
   - zsh
 # end
