@@ -8,6 +8,14 @@
             "Value": true
         },
         "ExtensionSettings": {
+            "{477dbe5e-1742-4641-a2c3-b6113bb5cf6e}": {
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/windowed/latest.xpi",
+                "installation_mode": "normal_installed"
+            },
+            "enhancerforyoutube@maximerf.addons.mozilla.org": {
+                "install_url": "https://addons.mozilla.org/firefox/downloads/latest/enhancer-for-youtube/latest.xpi",
+                "installation_mode": "normal_installed"
+            },
             "idcac-pub@guus.ninja": {
                 "install_url": "https://addons.mozilla.org/firefox/downloads/latest/istilldontcareaboutcookies/latest.xpi",
                 "installation_mode": "normal_installed"
