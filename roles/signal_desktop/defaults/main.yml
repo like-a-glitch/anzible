@@ -1,4 +1,4 @@
-autostart_signal: false
+signal_desktop_autostart: false
 signal_desktop_key_asc_path: /usr/share/keyrings/signal-desktop-keyring.asc
 signal_desktop_keyring_path: /usr/share/keyrings/signal-desktop-keyring.gpg
 signal_desktop_sources_path: /etc/apt/sources.list.d/signal-desktop.sources

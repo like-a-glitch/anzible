@@ -8,7 +8,7 @@
     group: "{{ remote_user_name }}"
     mode: '700'
     owner: "{{ remote_user_name }}"
-    path: "{{ config_path }}"
+    path: "{{ vscodium_config_path }}"
     state: directory
 
 - name: Create config sub dir
@@ -16,12 +16,12 @@
     group: "{{ remote_user_name }}"
     mode: '700'
     owner: "{{ remote_user_name }}"
-    path: "{{ config_path }}/User"
+    path: "{{ vscodium_config_path }}/User"
     state: directory
 
 - name: Copy settings file
   copy:
-    dest: "{{ config_path }}/User/settings.json"
+    dest: "{{ vscodium_config_path }}/User/settings.json"
     group: "{{ remote_user_name }}"
     mode: '644'
     owner: "{{ remote_user_name }}"
@@ -29,7 +29,7 @@
 
 - name: Copy keybindings file
   copy:
-    dest: "{{ config_path }}/User/keybindings.json"
+    dest: "{{ vscodium_config_path }}/User/keybindings.json"
     group: "{{ remote_user_name }}"
     mode: '644'
     owner: "{{ remote_user_name }}"

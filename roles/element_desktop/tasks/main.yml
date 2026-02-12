@@ -24,4 +24,4 @@
 - name: Add element-desktop to autostart_dict
   ansible.builtin.set_fact:
     autostart_dict: "{{ autostart_dict | default({}) | combine({'element-desktop': 'element-desktop --hidden'}) }}"
-  when: autostart_element
+  when: element_desktop_autostart

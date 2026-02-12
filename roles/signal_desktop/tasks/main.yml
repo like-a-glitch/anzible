@@ -28,4 +28,4 @@
 - name: Add signal-desktop to autostart_dict
   ansible.builtin.set_fact:
     autostart_dict: "{{ autostart_dict | default({}) | combine({'signal-desktop': 'signal-desktop --start-in-tray'}) }}"
-  when: autostart_signal
+  when: signal_desktop_autostart
