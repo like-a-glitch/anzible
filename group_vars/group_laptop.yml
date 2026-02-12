@@ -10,6 +10,7 @@ host_roles:
   - git
   - keepassxc
   - mpv
+  - scripts
   - signal_desktop
   - syncthing
   - vscodium

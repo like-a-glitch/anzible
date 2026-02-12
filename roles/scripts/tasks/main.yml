@@ -1,32 +1,33 @@
 - name: Create tmp dir
+  ansible.builtin.tempfile:
+    state: directory
   changed_when: false
   register: tmp_dir
-  tempfile:
-    state: directory
 
 - name: Clone scripts repo
-  changed_when: false
-  git:
+  ansible.builtin.git:
+    depth: 1
     dest: "{{ tmp_dir.path }}"
     repo: https://github.com/like-a-glitch/scripts.git
+  changed_when: false
 
 - name: Remove license and .git dir
-  changed_when: false
-  file:
+  ansible.builtin.file:
     path: "{{ tmp_dir.path }}/{{ item }}"
     state: absent
+  changed_when: false
   loop:
     - .git
     - LICENSE
 
 - name: Copy scripts to /usr/local/bin/
-  copy:
+  ansible.builtin.copy:
     dest: /usr/local/bin/
     mode: '755'
     src: "{{ tmp_dir.path }}/"
 
 - name: Remove tmp dir
-  changed_when: false
-  file:
+  ansible.builtin.file:
     path: "{{ tmp_dir.path }}"
     state: absent
+  changed_when: false
