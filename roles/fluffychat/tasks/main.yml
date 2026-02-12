@@ -1,0 +1,8 @@
+- name: Install fluffychat
+  community.general.snap:
+    name: fluffychat
+
+- name: Add fluffychat to autostart_dict
+  ansible.builtin.set_fact:
+    autostart_dict: "{{ autostart_dict | default({}) | combine({'fluffychat': 'fluffychat'}) }}"
+  when: fluffychat_autostart
