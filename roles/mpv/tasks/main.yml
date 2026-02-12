@@ -1,9 +1,9 @@
-- name: Install 'mpv'
-  package:
+- name: Install mpv
+  ansible.builtin.apt:
     name: mpv
 
 - name: Create config dir
-  file:
+  ansible.builtin.file:
     group: "{{ remote_user_name }}"
     mode: '700'
     owner: "{{ remote_user_name }}"
@@ -11,7 +11,7 @@
     state: directory
 
 - name: Copy keybindings file
-  copy:
+  ansible.builtin.copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/input.conf"
     group: "{{ remote_user_name }}"
     mode: '644'
@@ -19,7 +19,7 @@
     src: input.conf
 
 - name: Copy settings file
-  copy:
+  ansible.builtin.copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/mpv.conf"
     group: "{{ remote_user_name }}"
     mode: '644'
@@ -27,7 +27,7 @@
     src: mpv.conf
 
 - name: Create scripts dir
-  file:
+  ansible.builtin.file:
     group: "{{ remote_user_name }}"
     mode: '700'
     owner: "{{ remote_user_name }}"
@@ -35,27 +35,27 @@
     state: directory
 
 - name: Create tmp dir
+  ansible.builtin.tempfile:
+    state: directory
   changed_when: false
   register: tmp_dir
-  tempfile:
-    state: directory
 
 - name: Clone mpv_sponsorblock repo
-  changed_when: false
-  git:
+  ansible.builtin.git:
     dest: "{{ tmp_dir.path }}"
     repo: https://github.com/po5/mpv_sponsorblock.git
+  changed_when: false
 
 - name: Copy sponsorblock files 1
-  copy:
+  ansible.builtin.copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/scripts/"
     group: "{{ remote_user_name }}"
-    mode: '700'
+    mode: '644'
     owner: "{{ remote_user_name }}"
     src: "{{ tmp_dir.path }}/sponsorblock.lua"
 
 - name: Copy sponsorblock files 2
-  copy:
+  ansible.builtin.copy:
     dest: "/home/{{ remote_user_name }}/.config/mpv/scripts/"
     group: "{{ remote_user_name }}"
     mode: '700'
@@ -63,7 +63,7 @@
     src: "{{ tmp_dir.path }}/sponsorblock_shared"
 
 - name: Remove tmp dir
-  changed_when: false
-  file:
+  ansible.builtin.file:
     path: "{{ tmp_dir.path }}"
     state: absent
+  changed_when: false

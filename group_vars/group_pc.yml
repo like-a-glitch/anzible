@@ -11,6 +11,7 @@ host_roles:
   - fluffychat
   - git
   - keepassxc
+  - mpv
   - signal_desktop
   - syncthing
   - vscodium
