@@ -5,8 +5,12 @@
       - gnome-shell-extensions
       - helvum
       - libreoffice
+      - mumble
       - pavucontrol
       - pdfarranger
+      - pulseaudio-utils
+      - simple-scan
+      - streamlink
 
 - name: Install common snap packages
   community.general.snap:

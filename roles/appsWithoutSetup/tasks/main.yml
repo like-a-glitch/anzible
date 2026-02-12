@@ -4,8 +4,5 @@
     name:
       - deja-dup
       - exfatprogs
-      - mumble
       - python3-psutil
-      - simple-scan
-      - streamlink
       - vlc
