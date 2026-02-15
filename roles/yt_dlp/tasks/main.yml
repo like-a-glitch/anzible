@@ -1,0 +1,28 @@
+- name: Download yt-dlp-ppa key
+  ansible.builtin.get_url:
+    dest: "{{ yt_dlp_key_asc_path }}"
+    mode: '644'
+    url: 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0xCEC312CC5ED8215A6E0EFC49B90E9186F0E836FB'
+
+- name: Dearmor the key
+  ansible.builtin.command:
+    cmd: "gpg --dearmor -o {{ yt_dlp_keyring_path }} {{ yt_dlp_key_asc_path }}"
+  args:
+    creates: "{{ yt_dlp_keyring_path }}"
+
+- name: Add yt-dlp-ppa apt source
+  ansible.builtin.template:
+    dest: "{{ yt_dlp_sources_path }}"
+    group: root
+    mode: '644'
+    owner: root
+    src: yt-dlp-ppa.sources.j2
+
+- name: Run apt update
+  ansible.builtin.apt:
+    update_cache: true
+  changed_when: false
+
+- name: Install yt-dlp
+  ansible.builtin.apt:
+    name: yt-dlp

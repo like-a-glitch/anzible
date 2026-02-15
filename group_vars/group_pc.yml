@@ -16,6 +16,7 @@ host_roles:
   - signal_desktop
   - syncthing
   - vscodium
+  - yt_dlp
   - zsh
 # end
   - autostart
