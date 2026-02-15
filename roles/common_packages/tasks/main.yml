@@ -12,6 +12,7 @@
       - pulseaudio-utils
       - simple-scan
       - streamlink
+      - syncplay
 
 - name: Install common snap packages
   community.general.snap:
