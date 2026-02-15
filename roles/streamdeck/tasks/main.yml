@@ -1,18 +1,18 @@
-- name: Install 'virtualenv'
-  package:
+- name: Install virtualenv
+  ansible.builtin.apt:
     name: virtualenv
 
 # https://github.com/abcminiuser/python-elgato-streamdeck
-- name: Install 'streamdeck'
-  become_user: "{{ remote_user_name }}"
-  pip:
+- name: Install streamdeck
+  ansible.builtin.pip:
     name:
       - pillow
       - streamdeck
     virtualenv: "/home/{{ remote_user_name }}/.virtualenv/streamdeck"
+  become_user: "{{ remote_user_name }}"
 
 - name: Copy udev rules
-  copy:
+  ansible.builtin.copy:
     dest: /etc/udev/rules.d/
     group: root
     mode: '644'
@@ -20,7 +20,7 @@
     src: 10-streamdeck.rules
 
 - name: Copy user service file
-  template:
+  ansible.builtin.template:
     dest: "/home/{{ remote_user_name }}/.config/systemd/user/streamdeck.service"
     group: "{{ remote_user_name }}"
     mode: '644'
@@ -28,10 +28,10 @@
     src: streamdeck.service.j2
 
 - name: Enable streamdeck user service
-  become_user: "{{ remote_user_name }}"
-  systemd:
+  ansible.builtin.systemd:
     daemon_reload: true
     enabled: true
     name: streamdeck
     scope: user
     state: started
+  become_user: "{{ remote_user_name }}"
