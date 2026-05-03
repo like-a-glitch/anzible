@@ -10,6 +10,7 @@ host_roles:
   - firefox
   - fluffychat
   - git
+  - grub
   - keepassxc
   - mpv
   - scripts
